@@ -56,7 +56,7 @@ This architecture follows real-world **serverless**, **event-driven**, and **dat
 
 ---
 
-## 3. End-to-End Lifecycle (Option 2)
+## 3. End-to-End Lifecycle 
 
 1. **Networking & EC2 Setup**
    - Create a dedicated VPC, subnets, route table, internet gateway, and security group.
