@@ -112,7 +112,7 @@ A custom VPC is created to host the EC2 bastion host (telemetry simulator):
   ![Internet Gateway](screenshot/internet-gateway.png)
 
 - Route Table  
-  ![Route Table](screenshot/route-table.png)
+  ![Route Table](screenshot/route-tables.png)
 
 - Security Group  
   ![Security Group](screenshot/security-groups.png)
@@ -220,7 +220,7 @@ DynamoDB is used as a metadata and state store for each vehicle. Typical fields 
 **Screenshot:**
 
 - DynamoDB Tables  
-  ![DynamoDB](screenshot/dynamoDB-tables.png)
+  ![DynamoDB](screenshot/dynamoDB-table.png)
 
 ---
 
@@ -235,7 +235,7 @@ A Glue Crawler is configured to scan the S3 location that holds telemetry data s
 
 **Screenshot:**
 
-- Glue Crawler Running  
+- Glue Crawler   
   ![Glue Crawler](screenshot/glue-crawler.png)
 
 ---
@@ -250,16 +250,16 @@ Common tasks include:
   ![Athena Repair](screenshot/athena-Q1.png)
 
 - Basic queries to inspect data:
-  ![Athena Q1](screenshot/Athena-Q2.png)
+  ![Athena Q1](screenshot/athena-Q2.png)
 
 - Aggregation queries (e.g., average speed over time):
-  ![Athena Q2](screenshot/Athena-Q3.png)
+  ![Athena Q2](screenshot/athena-Q3.png)
 
 - Creating a summary view:
-  ![Athena Create View](screenshot/Athena-Q4.png)
+  ![Athena Create View](screenshot/athena-Q4.png)
 
 - Querying the summary view or final dataset:
-  ![Athena Q3](screenshot/Athena-Q5.png)
+  ![Athena Q3](screenshot/athena-Q5.png)
 
 These queries demonstrate how to go from raw ingestion to analytics and reporting.
 
