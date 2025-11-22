@@ -1,4 +1,4 @@
-# 🚗📡 IoT Vehicle Telemetry Pipeline on AWS
+# IoT Vehicle Telemetry Pipeline on AWS
 
 End-to-end serverless data pipeline for ingesting, storing, and analyzing vehicle telemetry data using AWS.
 
