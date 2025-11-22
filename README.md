@@ -297,8 +297,21 @@ A custom **CloudWatch Dashboard** monitors:
 
 ---
 
-## 9. Repository Structure
+## 9. Summary
 
-A suggested repository layout for this project:
+This project demonstrates a complete **IoT vehicle telemetry data pipeline** implemented using fully managed AWS services.
 
-```bash
+Key capabilities showcased:
+
+- **Real-time ingestion** using Amazon API Gateway and AWS Lambda  
+- **Serverless processing** of telemetry events (parsing, validation, metadata enrichment)  
+- **Durable storage** using Amazon S3 (raw + processed layers)  
+- **Fast lookups** and device state management using Amazon DynamoDB  
+- **Automated schema discovery** with AWS Glue Crawler  
+- **SQL analytics** over the data lake using Amazon Athena  
+- **Infrastructure visibility** and operational monitoring using CloudWatch Dashboards  
+- **Secure and scalable networking** using VPC, subnets, route tables, and security groups  
+- **IoT device simulation** using an EC2 bastion host with curl/Postman testing  
+
+This project reflects a **production-style IoT data pipeline** aligned with modern **data engineering**, **event-driven architectures**, and **AWS best practices**.  
+It is an excellent addition to a professional portfolio for roles involving **AWS Data Engineering**, **Cloud Computing**, and **Serverless Architecture**.
