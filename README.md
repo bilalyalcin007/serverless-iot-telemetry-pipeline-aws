@@ -30,7 +30,7 @@ This architecture follows real-world **serverless**, **event-driven**, and **dat
 
 ### 2.1 High-Level Diagram
 
-![Architecture](screenshot/architecture.drawio.png)
+![Architecture](screenshot/architecture.png)
 
 ### 2.2 Main Components
 
@@ -103,19 +103,19 @@ A custom VPC is created to host the EC2 bastion host (telemetry simulator):
 **Screenshots:**
 
 - VPC  
-  ![VPC](screenshot/VPC.png)
+  ![VPC](screenshot/vpc.png)
 
 - Subnets  
-  ![Subnets](screenshot/Subnets.png)
+  ![Subnets](screenshot/subnets.png)
 
 - Internet Gateway  
-  ![Internet Gateway](screenshot/Internet-Gateway.png)
+  ![Internet Gateway](screenshot/internet-gateway.png)
 
 - Route Table  
-  ![Route Table](screenshot/Route-Table.png)
+  ![Route Table](screenshot/route-table.png)
 
 - Security Group  
-  ![Security Group](screenshot/Security-Group.png)
+  ![Security Group](screenshot/security-groups.png)
 
 ### 4.2 EC2 Bastion Host (IoT Simulator)
 
@@ -124,10 +124,10 @@ An EC2 instance is launched in the VPC and used to simulate IoT devices sending 
 **Screenshots:**
 
 - EC2 Instance  
-  ![EC2](screenshot/EC2.png)
+  ![EC2](screenshot/ec2.png)
 
 - SSH Session (connected to EC2)  
-  ![SSH](screenshot/Terminal-connected-SSH.png)
+  ![SSH](screenshot/ec2-connected-SSH.png)
 
 From this instance you can run `curl` commands to test the API Gateway endpoint.
 
@@ -145,7 +145,7 @@ The ingestion entry point is a REST API with a `POST /ingest` endpoint.
 **Screenshot:**
 
 - API Gateway Configuration  
-  ![API Gateway](screenshot/ApiGateway.png)
+  ![API Gateway](screenshot/api-gateway.png)
 
 ---
 
@@ -169,16 +169,16 @@ Environment variables are used to make the function configurable:
 **Screenshots:**
 
 - Lambda Overview  
-  ![Lambda](screenshot/Lambda.png)
+  ![Lambda](screenshot/lambda.png)
 
 - Lambda Configuration / Code View  
-  ![Lambda Code 2](screenshot/Lambda2.png)
+  ![Lambda Code 2](screenshot/lambda1.png)
 
 - Lambda Additional View  
-  ![Lambda Code 3](screenshot/Lambda3.png)
+  ![Lambda Code 3](screenshot/lambda2.png)
 
 - Lambda Environment Variables  
-  ![Lambda Env Vars](screenshot/Lambda-Env-Var.png)
+  ![Lambda Env Vars](screenshot/lambda-env-var.png)
 
 > The full Python source code is stored in this repository as:  
 > `iot_lambda_function.py`
@@ -197,13 +197,13 @@ Two main S3 buckets are used:
 **Screenshots:**
 
 - S3 Buckets Overview  
-  ![S3 Buckets](screenshot/S3-Buckets.png)
+  ![S3 Buckets](screenshot/s3-buckets.png)
 
 - Raw Telemetry Data  
-  ![Raw Data](screenshot/Raw-Data.png)
+  ![Raw Data](screenshot/s3-raw-data.png)
 
 - Processed Telemetry Data  
-  ![Processed Data](screenshot/Processed-Data.png)
+  ![Processed Data](screenshot/s3-processed-data.png)
 
 ---
 
@@ -220,7 +220,7 @@ DynamoDB is used as a metadata and state store for each vehicle. Typical fields 
 **Screenshot:**
 
 - DynamoDB Tables  
-  ![DynamoDB](screenshot/DynamoDB-Tables.png)
+  ![DynamoDB](screenshot/dynamoDB-tables.png)
 
 ---
 
@@ -236,7 +236,7 @@ A Glue Crawler is configured to scan the S3 location that holds telemetry data s
 **Screenshot:**
 
 - Glue Crawler Running  
-  ![Glue Crawler](screenshot/Glue-Crawler-Running%20.png)
+  ![Glue Crawler](screenshot/glue-crawler.png)
 
 ---
 
@@ -247,19 +247,19 @@ Athena is used to run analytical queries over the data stored in S3 via external
 Common tasks include:
 
 - Repairing table partitions:
-  ![Athena Repair](screenshot/Athena-repair-table.png)
+  ![Athena Repair](screenshot/athena-Q1.png)
 
 - Basic queries to inspect data:
-  ![Athena Q1](screenshot/Athena-Q1.png)
+  ![Athena Q1](screenshot/Athena-Q2.png)
 
 - Aggregation queries (e.g., average speed over time):
-  ![Athena Q2](screenshot/Athena-Q2.png)
+  ![Athena Q2](screenshot/Athena-Q3.png)
 
 - Creating a summary view:
-  ![Athena Create View](screenshot/Athena-Create-View.png)
+  ![Athena Create View](screenshot/Athena-Q4.png)
 
 - Querying the summary view or final dataset:
-  ![Athena Q3](screenshot/Athena-Q3.png)
+  ![Athena Q3](screenshot/Athena-Q5.png)
 
 These queries demonstrate how to go from raw ingestion to analytics and reporting.
 
@@ -278,7 +278,7 @@ Postman is used to verify that:
 **Screenshot:**
 
 - Postman 200 OK Response  
-  ![Postman 200 OK](screenshot/Postman-200-OK.png)
+  ![Postman 200 OK](screenshot/postman-test.png)
 
 ---
 
@@ -293,7 +293,7 @@ A custom **CloudWatch Dashboard** monitors:
 **Screenshot:**
 
 - CloudWatch Dashboard  
-  ![CloudWatch Dashboard](screenshot/CloudWatch-Dashboard.png)
+  ![CloudWatch Dashboard](screenshot/cloudwatch-dashboard.png)
 
 ---
 
